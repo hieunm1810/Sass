@@ -1,0 +1,18 @@
+@mixin text($size: $text-md, $weight: $text-regular, $color: $text-c1-primary) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin animation($duration, $count, $mode) {
+  $name: animation-#{unique-id()};
+
+  @keyframes #{$name} {
+    @content;
+  }
+
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-iteration-count: $count;
+  animation-fill-mode: $mode;
+}

@@ -1,0 +1,303 @@
+.wrapper {
+    .content {
+        flex-grow: 1;
+        position: relative;
+        transition: left 0.5s;
+        left: 0;
+
+        &.--moved {
+            left: 300px;
+        }
+
+        &__bg-top {
+            position: absolute;
+            width: 100%;
+
+            img {
+                max-width: 100%;
+            }
+
+        }
+
+        .carousel {
+            background-image: url(../../images/Violet_top_left_wave.png);
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: contain;
+            width: 100%;
+
+            .container {
+                height: 700px;
+                display: flex;
+                align-items: center;
+
+                @media screen and (max-width:1199px) {
+                    max-width: 95%;
+                }
+
+                @media screen and (max-width:992px) {
+                    height: 850px;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                }
+
+                .carousel__text {
+                    @media screen and (max-width:1199px) {
+                        flex-basis: 50%;
+                    }
+
+                    @media screen and (max-width:992px) {
+                        flex-basis: auto;
+                    }
+
+                    h2 {
+                        @include text($text-l, $text-semibold, $text-c1-accent);
+
+                        @media screen and (max-width:1199px) {
+                            @include text($text-md, $text-semibold, $text-c1-accent);
+                        }
+                    }
+
+
+                    h1 {
+                        @include text($text-3xl, $text-bold, $text-c1-secondary);
+
+                        @media screen and (max-width:1199px) {
+                            @include text(4.725rem, $text-bold, $text-c1-secondary);
+                        }
+                    }
+                }
+
+                .carousel__img {
+                    &.animate__animated.animate__fadeIn {
+                        animation-duration: 3s;
+                    }
+
+                    @media screen and (max-width:992px) {
+                        margin-bottom: -3rem;
+                    }
+
+                    img {
+                        @media screen and (max-width:1199px) {
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .ourTeam {
+            background-color: #dcd0f0;
+            background-image: url(../../images/Wave_White_bottom_right_shape_01.png);
+            background-position: bottom;
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 100%;
+
+            .container {
+                @media screen and (max-width:1199px) {
+                    max-width: 95%;
+                }
+
+                .row {
+                    .col {
+                        padding-bottom: 1.5rem;
+                        padding-top: 1.5rem;
+
+                        @extend %fadeInAnimate;
+
+                        .card {
+                            border-radius: 1rem;
+                            transition: box-shadow .5s;
+                            border: none;
+
+
+
+                            &:hover {
+                                box-shadow: 0px 20px 32px 1px rgba(24, 24, 24, 0.2);
+                                -webkit-box-shadow: 0px 20px 32px 1px rgba(24, 24, 24, 0.2);
+                                -moz-box-shadow: 0px 20px 32px 1px rgba(24, 24, 24, 0.2);
+                            }
+
+                            &-img-top {
+                                overflow: hidden;
+
+                                img {
+                                    max-width: 100%;
+                                    transition: transform .5s;
+                                    border-radius: 1rem 1rem 0 0;
+
+                                    &:hover {
+                                        transform: scale(1.1, 1.1);
+                                    }
+                                }
+                            }
+
+                            &-body {
+                                padding-top: 3rem;
+                                padding-bottom: 3rem;
+                                text-align: center;
+
+                                .card-subtitle {
+                                    @include text($text-xs, $text-semibold, $text-c1-accent);
+                                }
+
+                                .card-title {
+                                    @include text($text-xl, $text-bold, $text-c1-secondary);
+                                    margin-bottom: 1rem
+                                }
+
+                                .card-text {
+                                    @include text();
+                                    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+                                    line-height: 170%;
+
+                                    @media screen and (max-width:1199px) {
+                                        @include text($size: 1.4rem);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .findCourse {
+            padding: 8rem 0;
+            background-image: url(../../images/accent_bottom_wave_01.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: bottom;
+            width: 100%;
+
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                @media screen and (max-width:1199px) {
+                    max-width: 95%;
+                }
+
+
+                @media screen and (max-width:992px) {
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                }
+
+                .findCourse__img {
+                    img {
+                        max-width: 100%;
+                    }
+                }
+
+                .findCourse__form {
+                    background-color: $color-white;
+                    box-shadow: 0px 10px 10px 0px rgba(24, 24, 24, 0.1);
+                    padding: 2rem 3rem 7rem;
+                    border-radius: 1rem;
+
+                    &.wow.animate__animated.animate__fadeIn {
+                        animation-duration: 3s;
+                    }
+
+                    @media screen and (max-width:992px) {
+                        width: 100%;
+                        margin-top: 4rem;
+                    }
+
+                    h1 {
+                        @include text($text-2xl, $text-bold, $text-c1-secondary);
+                        margin-bottom: 6rem;
+                    }
+
+                    form {
+                        .form-row {
+                            margin-bottom: 2rem;
+
+                            .col {
+                                display: flex;
+                                position: relative;
+
+                                i {
+                                    position: absolute;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    left: 1.5rem;
+                                    @include text($size: $text-xs, $color: $text-c1-accent);
+                                }
+
+                                .form-control {
+                                    padding: 1.5rem 1.5rem 1.5rem 3rem;
+                                    border-radius: 5rem;
+
+                                    &::placeholder {
+                                        @include text($size: $text-xs)
+                                    }
+                                }
+                            }
+                        }
+
+                        .form-group {
+                            display: flex;
+                            position: relative;
+                            margin-bottom: 2rem;
+
+                            i.fa-graduation-cap {
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                left: 1rem;
+                                @include text($size: $text-xs, $color: $text-c1-accent);
+                            }
+
+                            i.fa-message {
+                                position: absolute;
+                                top: 0.8rem;
+                                left: 1rem;
+                                @include text($size: $text-xs, $color: $text-c1-accent);
+                            }
+
+                            select.form-control {
+                                height: auto;
+                                padding: 1rem 1rem 1rem 3rem;
+                                border-radius: 5rem;
+                                @include text($size: $text-xs)
+                            }
+
+                            textarea.form-control {
+                                padding-left: 3rem;
+                                border-radius: 2rem;
+
+                                &::placeholder {
+                                    @include text($size: $text-xs)
+                                }
+                            }
+                        }
+
+                        .findCourse__btn {
+                            @extend %button;
+                            padding: 1rem 5rem; 
+                            margin-top: 4rem;
+                        }
+                    }
+                }
+            }
+        }
+        //
+    }
+}
+
+%fadeInAnimate {
+    @for $i from 1 through 4 {
+  
+      .--card__#{$i} {
+        animation-name: fadeIn;
+        animation-duration: 2s;
+        animation-delay: ($i / 4) * 1s;
+      }
+    }
+  }
